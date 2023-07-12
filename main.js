@@ -17,7 +17,7 @@ VisitorAPI(
     let country = data.countryCode;
     let city = data.city;
     axios
-      .get("http://api.aladhan.com/v1/timingsByCity", {
+      .get("https://api.aladhan.com/v1/timingsByCity", {
         params: {
           country: country,
           city: city,
