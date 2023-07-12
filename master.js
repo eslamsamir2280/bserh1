@@ -23,7 +23,7 @@ let myRequest = new XMLHttpRequest();
                         .then(response => response.json())
                         .then(data => {
                             surahpop.innerHTML = "";
-                            let ayat = jsData[index].verses;
+                            let ayat = data.data.ayahs;
                             console.log(ayat)
                              content.innerHTML = ""; 
                                 let kind = ""
@@ -58,7 +58,7 @@ let myRequest = new XMLHttpRequest();
                  surahpop.innerHTML += ` 
                  
                  <span>${ayah.text}</span>
-                 <span class="id">﴿${ayah.id}﴾</span>
+                 <span class="id">﴿${ayah.numberInSurah}﴾</span>
                `;
                });
                console.log(content)
@@ -68,67 +68,3 @@ let myRequest = new XMLHttpRequest();
                         });
             }
         };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // let myRequest = new XMLHttpRequest();
-// // // فتح الاتصال بملف quran.json
-// // myRequest.open("GET", "./data/quran.json");
-// // // إرسال الطلب
-// // myRequest.send();
-// // // عند تغيير حالة الاستجابة
-// // myRequest.onreadystatechange = function () {
-// //   if (this.readyState === 4 && this.status === 200) {
-// //     let jsData = JSON.parse(this.responseText);
-// //     let surahs = jsData;
-// //     let numberOfsurahs = 114;
-
-// //     for (let i = 0; i < numberOfsurahs; i++) {
-// //       boxs.innerHTML += `<div class="box" onclick='open()'>
-// //         <h4>${surahs[i].name}</h4>
-// //         <h4>${surahs[i].transliteration}</h4>
-// //       </div>`;
-// //     }
-// //     let surahsbox = document.querySelectorAll('.box')
-// //     let surahpop = document.getElementsByClassName("surah-pop");
-// //     let content = document.getElementsByClassName('content');
-// //     surahsbox.forEach((title , index) =>{
-// //         title.addEventListener('click', function(){
-// //         })
-// //     })
-// //   }
-// // };
-
-
